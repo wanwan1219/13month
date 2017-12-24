@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" class="input"/>
+<input type="button" class="btn" value="提交"/>
+<script>
+    /*设置cookie 存储input的内容30天*/
+    function setCookie(name,value,iday){
+        var oDate=new Date();
+        oDate.setDate(oDate.getDate()+iday);
+        document.cookie=name+"="+value+";expires="+oDate;
+    }
+    var btn=document.getElementsByClassName("btn")[0];
+    var int=document.getElementsByClassName("input")[0];
+
+    btn.onclick=function(){
+        var val=int.value;
+        setCookie("aaa",val,30);
+    };
+
+
+    /*获取cookie的内容*/
+    function getCookie(name){
+        var arr=document.cookie.split("; ");/*注意空格*/
+        console.log(arr);
+        for(var i=0;i<arr.length;i++){
+            var arr2=arr[i].split("=");
+            if(arr2[0]==name){
+                return arr2[1];
+            }
+        }
+        return "";
+
+    }
+
+    console.log(getCookie("aaa"));
+</script>
+</body>
+</html>

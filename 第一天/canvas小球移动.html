@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #can{
+            background: white;
+            display: block;
+            margin: 100px auto 0;
+        }
+        body{
+            background: black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="can" width="800px" height="800px"></canvas>
+</body>
+<script>
+    var canvas=document.getElementById("can");
+    var ctx=canvas.getContext("2d");
+    var ballArray=new Array();
+    function Ball(w){
+        this.x= w.x;
+        this.y= w.y;
+        this.r= 30;
+        this.color="rgb("+parseInt(Math.random()*255)+','+parseInt(Math.random()*255)+','+parseInt(Math.random()*255)+")";
+        //x移动的大小
+        this.dX=Math.random()*10-5;
+        this.dY=Math.random()*10-5;
+        //半径的衰减
+        this.dR=Math.random()+0.3;
+        //将实例化的小球放到数组里；
+        ballArray.push(this);
+    }
+    Ball.prototype={
+        //更新自己
+        update:function(){
+            this.x-=this.dX;
+            this.y-=this.dY;
+            this.r-=this.dR;
+            if(this.r<=0){
+                this.r=0.1;
+                delete this;
+            }
+        },
+        render:function(){
+            ctx.beginPath();
+            ctx.arc(this.x,this.y,this.r,0,Math.PI*2,true);
+            ctx.fillStyle=this.color;
+            ctx.fill();
+        }
+    };
+
+    //小球数组
+    setInterval(function(){
+        ctx.clearRect(0,0,canvas.width,canvas.height);/*清空画布*/
+        for(var i=0;i<ballArray.length;i++){
+            //update可能把自己删了
+            ballArray[i].update();
+            if(ballArray[i]){
+                ballArray[i].render();
+            }
+        }
+    },20);
+    canvas.addEventListener("mousemove",function(event){
+        new Ball({x:event.offsetX,y:event.offsetY})
+    });
+
+
+
+</script>
+</html>

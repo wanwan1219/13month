@@ -1,0 +1,143 @@
+body{
+    margin: 0 auto;
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    font-size: .12rem;
+    height: auto;
+    /*overflow: hidden;*/
+    background: white;
+}
+.header{
+    width: 5.4rem;
+    height: .44rem;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    background: white;
+    z-index: 999;
+    text-align: center;
+}
+.header .back,.header .xx{
+    width: .44rem;
+    text-align: center;
+    line-height: .44rem;
+    float: left;
+}
+i{
+    display: inline-block;
+}
+.header .back i{
+    width: .1rem;
+    height: .1rem;
+    transform: rotate(45deg);
+    border: 0.02rem solid #099FDE;
+    border-top: none;
+    border-right: none;
+    background: none;
+}
+.header .xx{
+    float: right;
+    color: #099fde;
+    font-size: .16rem;
+    padding-right: .1rem;
+}
+.page{
+    width: 100%;
+    padding-top: .44rem;
+}
+.page h2{
+    text-align: center;
+    font-size: .25rem;
+    color: #333;
+    line-height: .35rem;
+    font-weight: normal;
+}
+.login_box {
+    margin-top: .50rem;
+}
+.login_box_div{
+    padding: 0 .25rem;
+}
+.login_box_div p{
+    border-bottom: .01rem solid #CCCCCC;
+    position: relative;
+}
+.login_box_div p input{
+    width: 100%;
+    height: .55rem;
+    font-size: .16rem;
+    border:none;
+    outline: none;
+}
+input::-webkit-input-placeholder{
+    color: #DECABB;
+}
+input::-moz-placeholder{
+    color: #DECABB;
+}
+input:-ms-input-placeholder{
+    color: #DECABB;
+}
+.login_box_div .pass-a{
+    color: #099FDE;
+    cursor: pointer;
+    font-size: .13rem;
+    position: absolute;
+    right: .1rem;
+    top: 50%;
+    margin-top: -.085rem;
+}
+.page .login_box .btn{
+    color: #FFF;
+    font-size: .18rem;
+    height: .44rem;
+    border-radius: .03rem;
+    text-align: center;
+    background-color: #ff9a14;
+    margin-top: .3rem;
+}
+.page .login_box .login_box_div .other{
+    padding-top: .2rem;
+    border: none;
+}
+.other a{
+    color: #666;
+    font-size: .15rem;
+}
+.footer{
+    width: 100%;
+    padding-top: .5rem;
+}
+.footer li{
+    float: left;
+    width: 33%;
+    height: .45rem;
+    text-align: center;
+}
+.footer li a{
+    display: inline-block;
+    width: .39rem;
+    height: .39rem;
+    border: .01rem solid rgba(72,185,241,0.6);
+    border-radius: 50%;
+    line-height: .49rem;
+    text-align: center;
+}
+.footer li a i{
+    width: .23rem;
+    height: .2rem;
+    background: url("../img/un_other_login.png") no-repeat  -.01rem -.22rem;
+    background-size: .25rem auto;
+}
+.agreement {
+    margin-top: 17px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1;
+    color: #999;
+    padding: .5rem 0 .3rem;
+}
+.agreement a{
+    color: #099fde;
+}

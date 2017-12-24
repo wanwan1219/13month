@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="app-mobile-web-app-capable" content="yes">
+    <meta name="app-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/hotel.css"/>
+    <script src="js/rem-common.js"></script>
+</head>
+<body>
+<div class="header clear">
+    <div class="back" onclick="javascript:window.open('index.html')">
+        <i></i>
+    </div>
+    <p>国内/海外酒店</p>
+    <div class="dl">
+        <i></i>
+        <a>未登录</a>
+    </div>
+</div>
+<div class="ban">
+    <img src="img/index-hb.jpg" alt="">
+</div>
+<div class="content">
+    <ul>
+        <li class="cont-one">
+            <p>
+                <a class="cont-on-top">目的地</a>
+                <a class="cont-on-top2">上海</a>
+                <img src="img/dj.png" alt="">
+            </p>
+            <img src="img/dangqian.png" alt="" style="width: .48rem;height: .48rem;margin-top: -.24rem;right: .2rem">
+        </li>
+        <li>
+            <a class="cont-on-top">入驻</a>
+            <a class="cont-on-top" style="margin-left: 50%">离店</a>
+            <a class="cont-on-top2 now-day"></a>
+            <a class="cont-on-top2 tomorrow-day" style="margin-left: 50%"></a>
+            <a class="cont-on-top top-left">今天</a>
+            <a class="cont-on-top top-left" style="left: 3.7rem">明天</a>
+            <span class="days">1晚</span>
+            <img src="img/dj.png" alt="">
+        </li>
+        <li>
+            <p class="star-p">关键字/位置/品牌/酒店名</p>
+            <img src="img/dj.png" alt="">
+        </li>
+        <li>
+            <p class="star-p">星级/价格</p>
+            <img src="img/dj.png" alt="">
+        </li>
+        <li>
+            <button class="btn">查询</button>
+            <span class="search">查找附近酒店</span>
+        </li>
+    </ul>
+</div>
+<div class="me">我的订单</div>
+<div class="choose-bar">
+    <div>
+        <img src="img/choose1.png" alt="">
+    </div>
+    <div>
+        <p><img src="img/choose2.png" alt=""></p>
+        <p><img src="img/choose3.png" alt=""></p>
+    </div>
+    <div>
+        <p><img src="img/choose4.png" alt=""></p>
+        <p><img src="img/choose5.png" alt=""></p>
+    </div>
+</div>
+<div class="bottom">
+    <img src="img/botm.png" alt="">
+</div>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    var timer=setInterval(function(){
+        clearInterval(timer);
+        var data=new Date(),
+                math=data.getMonth()+ 1,
+                day=data.getDate(),
+                mday=day+ 1,
+                nd=document.getElementsByClassName("now-day")[0],
+                td=document.getElementsByClassName("tomorrow-day")[0];
+        console.log(nd,td);
+        nd.innerHTML=math+"月"+day+"日";
+        td.innerHTML=math+"月"+mday+"日";
+    },1000);
+</script>
+</html>

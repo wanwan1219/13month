@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box {
+            width: 700px;
+            height: 500px;
+            background: red;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        .box .box1 {
+            width: 15000px;
+            height: 100%;
+            background: blue;
+            position: absolute;
+            left: 0;
+        }
+
+        .box .box1 ul li {
+            width: 700px;
+            height: 500px;
+            background: red;
+            font: 900 68px/500px "simsun";
+            text-align: center;
+            float: left;
+        }
+
+        .box ol {
+            width: 200px;
+            height: 400px;
+            position: absolute;
+            right: 10px;
+            top: 30px;;
+        }
+
+        .box ol li {
+            text-align: right;
+            background: yellowgreen;
+            cursor: pointer;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="box1">
+        <ul>
+            <li class="col">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>1</li>
+        </ul>
+    </div>
+    <ol>
+        <li>第一张</li>
+        <li>第2张</li>
+        <li>第3张</li>
+        <li>第4张</li>
+        <li>第5张</li>
+        <li>第6张</li>
+    </ol>
+
+</div>
+
+</body>
+<script src="jquery-1.8.3.min.js"></script>
+<script>
+    var k = true;
+    var len = (".box ul li").length;
+    var l = 1;
+
+
+    $(".box  ol li").click(function () {
+        var index = $(this).index();
+        if (index = 0) {
+            $(".box .box1 ").css({left: 0})
+        } else {
+            $(".box .box1 ").stop().animate({left: -700 * index}, 400);
+        }
+
+    })
+</script>
+</html>

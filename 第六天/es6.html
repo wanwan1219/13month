@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 400px;
+            height: 400px;
+            /*-webkit-transition: prop time;
+            -moz-transition: prop time;
+            -ms-transition: prop time;
+            -o-transition: prop time;
+            transition: prop time;*/
+        }
+    </style>
+</head>
+<body>
+<div class="bob">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</div>
+<p>变量的解构</p>
+
+<img src="es6/img/VKSZ6__AM%5DZEL9CSBSVQ4TJ.jpg" alt="">
+<p>数值的扩展</p>
+
+<img src="es6/img/6VA~NW@~2TBUFYCGDZ(~DFH.jpg" alt="">
+<img src="es6/img/%5D@VB%5B%25UQ~SG5Q%7B_@XGQ%7B2%7BB.jpg" alt="">
+<img src="es6/img/MEGY~YZSXRZ$LTID_%5BO6JE9.jpg" alt="">
+<img src="es6/img/$RH0WD%5DXIKV4LPMUAU~JTI7.jpg" alt="">
+<img src="es6/img/J%7BU%253%605%7D8QO7SF_0N%25J%7D%603N.jpg" alt="">
+<p>数组的扩展</p>
+<img src="es6/img/P7%7BSSA%7BP9GF6O%7D63%5D03U%5B@7.jpg" alt="">
+<img src="es6/img/ADU32%25QS%7BJ5FKW5%5DON%7B7E(G.jpg" alt="">
+<img src="es6/img/M(P9FGO~%25(CU0V(0L%25%7BR2RP.jpg" alt="">
+</body>
+<!--es6-->
+
+<!--全局作用域
+函数作用域
+块级作用域
+
+-->
+<script>
+    {
+//        console.log(a);/*弹不出  let没有变量提升的功能*/
+        let a = 5;
+        a = 11;
+        /*这样可以修改*/
+//        let a=11;/*不能重复声明*/
+        console.log(a);
+        /*能打印出来 块以外不能访问*/
+    }
+    //    console.log(a);(打印不出来);
+
+    //js是单线程 for循环先循环在执行
+    /*  for (let i = 0; i < 5; i++) {
+     setTimeout(function () {
+     console.log(i);
+     }, 0)
+     }*/
+
+    {
+        const b = 1;
+        /*声明常量,声明之后值不能改变  其余都一样*/
+        console.log(b);
+    }
+    //    解构
+    var bob = document.getElementsByClassName("bob")[0];
+    var lis = bob.children;
+    let [li1,li2,li3,li4,li5]=lis;
+
+    console.log(li2);
+
+    /*    var [foo]=[];
+     var [foo]=1;
+     var [foo]=false;
+     var [foo]=NaN;*/
+    //    var [bar,foo]=[1];
+    //    console.log(foo);
+    //    这些都属于解构不成功,foo的值都会等于undefined
+    // 这是因为原始类型的值,会自动转为对象,比如数值为new Number(1)从而导致foo取到的为undefined
+    //    不完全解构
+
+    /*就是等号左边的东西只匹配一部分等号 右边的数组这种情况下解构依然可以成功
+     * ler[x,y]=[1,1,2];
+     * x//1
+     * y//2
+     * let[a,[b],d]=[a,[2,3],3]
+     *a//1
+     * b//2
+     * d//4
+     *
+     * */
+    //上面的结构都属于不完全解构,但仍可以成功,如果对undefined或者null就会报错
+
+    /*解构不但对于数组,还可以用于对象*/
+
+
+    var {foo,bar}={bar: "bbb", foo: "aaa"};
+    console.log(foo);
+    /*aaa*/
+    console.log(bar);
+    /*bbb*/
+
+
+    var {baz}={foo: "aaa", bar: "bbb"};
+    console.log(baz);
+    /*undefined*/
+    //    因为变量没有对应的同属性名字
+
+
+
+    //数值的扩展
+    /*   number.isFinite();/!*检测一个数值是否为非无穷*!/
+     */
+    console.log(Number.isFinite(0.8));
+    /*true*/
+    console.log(Number.isFinite(NaN));
+    /*false*/
+    console.log(Number.isFinite(15));
+    /*true*/
+    //    console.log(Number.isFinite(infinity));
+    //    console.log(Number.isFinite(-infinity));
+    console.log(Number.isFinite("foo"));
+    /*false*/
+    console.log(Number.isFinite("15"));
+    /*false*/
+    console.log(Number.isFinite(true));
+    /*false*/
+
+
+    Number.isNaN();
+    /*用来检测值是否为nan*/
+//        console.log(Number.NaN(NaN));
+//        /*true*/
+//        console.log(Number.NaN(15));
+//        /*fasle*/
+//        console.log(Number.NaN("15"));
+//        /*false*/
+//        console.log(Number.NaN(true));
+    /*false*/
+
+
+    console.log(Math.sign(2.5));
+    /*1*/
+    console.log(Math.sign(-2.5));
+    /*-1*/
+    console.log(Math.sign(0));
+    /*0*/
+    console.log(Math.sign(-0));
+    /*-0*/
+    console.log(Math.sign("sss"));
+    /*NaN  不是数字的值 返回NaN*/
+    console.log(Math.sign("2.5"));
+    /*1  会转换*/
+
+
+    //    array.form方法可以把函数的arguments对象转换为数组 实参都放到arguments这个伪数组中
+    //    arguments不是数组 但是有数组的属性 是一个伪数组
+    function fff() {
+        var t = Array.from(arguments);
+        console.log(t);//["a", "b", "c"]
+    }
+    fff("a", "b", "c");//传参
+
+
+    Array();//[]
+    Array(3);//[undefined,undefined,undefined]
+    Array(3,4,5);//[3,4,5]
+    //弥补Array(3)的不足
+    Array.of(3,4,5);//[3,4,5]
+    Array.of(3);//[3]
+    Array.of(3).length;//1
+
+
+    //    数组的返回值,.find用于找到第一个返回符合条件的成员   可以发现nan 弥补了数组的indexof方法的不足
+    console.log([1, 2, 1, 5, 3, 5, 2, 5, 5, 11, 12, 15].find(function (value, index, arr) {
+        return value > 9;
+    }));
+    //    findindex返回符合条件的位置,如果找不到返回值为-1
+    console.log([1, 2, 1, 5, 3, 5, 2, 5, 5, 11, 12, 15].findIndex(function (value, index, arr) {
+        return value > 9;
+    }));
+
+
+
+    //    数组的填充filll
+    console.log(["a", "b", "c"].fill(2));/*222*/
+    //    还可以接受第二个和第三个参数 表示指定的起始位置和结束位置
+    console.log(["a", "b", "c"].fill(7,1,2));/*a,7,4*/
+
+
+    //keys 打印键
+    //values 打印值
+    //entries 打印键和值
+    var arr=["a","b"];
+    for(let index of arr.keys()){
+        console.log(index);//0 1
+    }
+    /*for (let elem of arr.values()){
+     console.log(elem);//"a" "b"
+     }*/
+    for (let [index,elem] of arr.entries()){
+        console.log(index, elem);//0 "a"    1 "b"
+    }
+
+    Number.isInteger()
+
+//    属性的简写
+    /*function f(x,y){
+        ruturn {x,y}
+    }*/   //////////////////////////////////////baocuo
+    /*等价于*/
+   /* function f(x,y){
+        ruturn{x:x,y:y}
+    }*/  //////////////////////////////////////baocuo
+//    方法也可以简写
+    var aa={
+        method(){
+        return "hello";
+    }
+    }
+    /*等价于*/
+    var aa={
+        method:function(){
+            return "hello"
+        }
+    }
+
+
+    var Person={
+
+    };
+
+
+    console.log((NaN === NaN));//false
+    console.log((+0 === -0));//true
+    console.log(Object.is(+0,-0));//false
+    console.log(Object.is(NaN,NaN));//true
+
+    //数组去重 Set类似于数组 但是成员的值都是唯一的 没有重复的值 本身是一个构造函数
+    var arr1=[1,2,3,2,3,2,4,5];
+    var set=new Set(arr1);
+    console.log(set);/*  Set(5) {1, 2, 3, 4, 5}   伪数组*/
+    var arr2=Array.from(set);
+    console.log(arr2);/*  (5) [1, 2, 3, 4, 5]  */
+//    set的添加删除判断清除操作
+    /*add(value);//添加某一个值 返回set本身的结构
+    delete(value);//删除某一个值 返回布尔值 表示删除是否成功
+    has(value);//返回一个布尔值 表示该值是否为Set的成员
+    clear()//清除所有成员 没有返回值*/
+    console.log(set.add(7));/*Set(6) {1, 2, 3, 4, 5, 7}*/
+    console.log(set.delete(7));/*true*/
+    console.log(set.has(7));/*false*/
+    //console.log(set.clear());/*undefined*/
+//    "7"和7是两个值 进行判断是用===来判断的
+//    set结构的实例有四个遍历方法
+    /*keys(); //返回一个键名的遍历
+    value();//返回一个键值的遍历
+    entries();//返回键值对的遍历器
+    forEach();//使用回调函数遍历每一个成员*/
+    console.log(set);
+    console.log(set.keys());  /*SetIterator {1, 2, 3, 4, 5}   "values"*/
+    console.log(set.values());  /*SetIterator {1, 2, 3, 4, 5}   "values"*/
+    console.log(set.entries());   /*SetIterator {1, 2, 3, 4, 5}   "entries"*/
+    set.forEach(function(){
+        console.log(1);  /*1 1 1 1 1*/
+    })
+
+
+
+</script>
+</html>

@@ -1,0 +1,88 @@
+body{
+    margin: 0 auto;
+    width: 100%;
+    min-width: 320px;
+    /*max-width: 640px;*/
+    font-size: .12rem;
+    height: auto;
+    /*overflow: hidden;*/
+}
+.header{
+    width: 100%;
+    height: .91rem;
+    min-width: 320px;
+    max-width: 100%;
+    left:0;
+    background: #2ca2f9;
+    position: fixed;
+    top:0;
+    line-height: .91rem;
+    z-index: 999;
+}
+.header .logo{
+    float: left;
+    display: inline-block;
+    vertical-align: middle;
+}
+.header .logo img{
+    width: 2.04rem;
+    height: .45rem;
+    margin-left: .2rem;
+}
+.header .update{
+    float: left;
+    margin-left: .1rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+.header .update span{
+    display: inline-block;
+    width: 1.6rem;
+    height: .48rem;
+    border: 1px solid white;
+    border-radius: .1rem;
+    font: .25rem/.48rem "";
+    background: #2ca2f9;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+.header .search{
+    margin-right: .1rem;
+    float: right;
+    display: inline-block;
+    vertical-align: middle;
+}
+.header .search img{
+    width: .34rem;
+    height: .34rem;
+}
+.nav{
+    margin-top: .91rem;
+    width: 100%;
+    height: .9rem;
+    min-width: 320px;
+    max-width: 100%;
+    left:0;
+    box-shadow: 0 0.1rem 0.1rem 0 #f4f4f4;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background: white;
+}
+.nav .table{
+    margin:0 .2rem;
+}
+.nav .table li{
+    height: .9rem;
+    box-sizing: border-box;
+    float: left;
+    width: 25%;
+    line-height: .9rem;
+    font-size: .33rem;
+    text-align: center;
+    border-bottom: .1rem solid transparent;
+}
+.nav .table li.cli{
+    border-bottom: .1rem solid #33a3f5;
+}

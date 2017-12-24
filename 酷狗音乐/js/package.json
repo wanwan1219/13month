@@ -1,0 +1,66 @@
+{
+  "bang0": {
+    "success": "成功",
+    "data": {
+      "sysId": 0,
+      "coverImg": "img/2_1.png",
+      "status":"酷狗飙升榜"
+    }
+  },
+  "bang1": {
+    "success": "成功",
+    "data": {
+      "sysId": 1,
+      "coverImg": "img/2_2.png",
+      "status": "酷狗TOP500"
+    }
+  },
+  "bang2": {
+    "success": "成功",
+    "data": {
+      "sysId": 2,
+      "coverImg": "img/2_3.png",
+      "status": "网红网歌榜"
+    }
+  },
+  "bang3": {
+    "success": "成功",
+    "data": {
+      "sysId": 3,
+      "coverImg": "img/2_4.png",
+      "status": "DJ热歌榜"
+    }
+  },
+  "bang4": {
+    "success": "成功",
+    "data": {
+      "sysId": 4,
+      "coverImg": "img/2_1.png",
+      "status": "华语新歌榜"
+    }
+  },
+  "bang5": {
+    "success": "成功",
+    "data": {
+      "sysId": 5,
+      "coverImg": "img/2_2.png",
+      "status": "欧美新歌榜"
+    }
+  },
+  "bang6": {
+    "success": "成功",
+    "data": {
+      "sysId": 6,
+      "coverImg": "img/2_3.png",
+      "status": "韩国新歌榜"
+    }
+  },
+  "bang7": {
+    "success": "成功",
+    "data": {
+      "sysId": 7,
+      "coverImg": "img/2_4.png",
+      "status": "日本新歌榜"
+    }
+  }
+}

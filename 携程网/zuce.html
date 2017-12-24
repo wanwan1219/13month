@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="apple-mobole-web-app-capable" content="yes">
+    <meta name="apple-mobole-web-app-status-bar-style" content="black" >
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <title>注册</title>
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/D-head.css">
+    <link rel="stylesheet" href="css/Z-header.css">
+</head>
+<body>
+<!--这里是头部部分-->
+<div class="header">
+    <div class="back" onclick="javascript:window.open('denglu.html')">
+        <i></i>
+    </div>
+    <a class="header-title">注册 1/3</a>
+</div>
+<div class="zw" style="height: .44rem"></div>
+<!--这里是登录注册部分-->
+<div class="page">
+    <h2>输入手机号</h2>
+    <form class="login_box" action="">
+        <div class="login_box_div user">
+            <p class="page-p1">
+                <input type="tel" placeholder="中国大陆+86" maxlength="30">
+            </p>
+            <p class="page-p2">
+                <input type="tel" placeholder="常用手机号" maxlength="20" style="width: 80%">
+            </p>
+            <p>
+                <input type="button" value="下一步，验证手机号" class="btn">
+            </p>
+        </div>
+    </form>
+</div>
+<!--这里是底部的协议部分-->
+<p class="agreement" id="law_rule">登录即代表您同意我们的 <a id="agreement">服务协议</a> 和 <a id="policy">隐私政策</a></p>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    (function(num){
+        var resizeEvt = 'orientationchange'in window ? 'orientationchange':'resize',   //判断是横竖屏显示 resize是设置大小 “？”判断条件是否符合  符合返回条件1 不符合返回条件2
+                doc = document.documentElement,               //声明doc为html也就是当前窗口
+                recalc = function(){
+                    var clientWidth = doc.clientWidth;       //获取当前窗口的大小
+                    if(!clientWidth)return;                 //判断是否获取到当前窗口的宽 如果获取不到就跳出语句 下面的不执行 “ ！”是取反
+                    if(clientWidth>num){                  //如果当前获取的窗口的大小大于老板规定的移动端网页的定宽   则让他等于定宽
+                        clientWidth=num }
+                    doc.style.fontSize = 100*(clientWidth/num)+'px';        //设置当前html（body）的fondSize为多少px  为了让 rem 为自适应屏幕大小
+                };
+        if(!document.addEventListener)return;         //判断当前浏览器的支持不支持监听事件 如果获取不到就跳出语句 下面的不执行
+        window.addEventListener(resizeEvt,recalc);     //如果支持了就给当前窗口添加监听他的“resizeEvt”（前面自己定义的）事件（屏幕是否横竖屏 以及 屏幕大小是否改变）
+        document.addEventListener("DOMContentLoaded",recalc);
+    })(540);
+    $(".btn").click(function(){
+        if($(".page-p1 input").val()!==""&&$(".page-p2 input").val()!==""){
+            window.location.href="zuce2.html";
+        }
+    })
+</script>
+</html>

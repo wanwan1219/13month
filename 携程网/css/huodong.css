@@ -1,0 +1,55 @@
+/*这里是热门活动部分*/
+.huodong{
+    margin:.08rem 0;
+}
+.huodong .huodong-warp{
+    width: 100%;
+    display: flex;
+    border-bottom: 0.01rem solid #DBDBDB;
+}
+.huodong .huodong-warp .hd-hz{
+    height: 4.05rem;
+    flex-wrap: wrap;
+    flex: 1;
+}
+.huodong .hd-hz img{
+    border: 0.01rem solid #EDEDED;
+    box-sizing: border-box;
+}
+.huodong .hd-hz .hd-hz-img-top{
+    border-top: none;
+}
+/*这里是底部条*/
+.tool{
+    width: 100%;
+    background: white;
+    word-spacing: -.05rem;
+    margin-bottom: 0.08rem;
+}
+.tool p{
+    float: left;
+    width: 33%;
+    height: 0.51rem;
+    text-align: center;
+    font-size: .12rem;
+    color: #333;
+    line-height: 0.6rem;
+    border-top: 0.01rem solid #DBDBDB;
+    border-bottom: 0.01rem solid #DBDBDB;
+}
+.tool .tool-a2{
+    width: 34%;
+}
+/*这里是footer部分*/
+.footer,.footer2{
+    text-align: center;
+    color: #999;
+    font-size: .12rem;
+    padding: 0.05rem 0;
+}
+.footer a{
+    color: #666;
+}
+.footer2 a{
+    color: #999;
+}

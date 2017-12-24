@@ -1,0 +1,56 @@
+body{
+    margin: 0 auto;
+    width: 100%;
+    min-width: 320px;
+    /*max-width: 640px;*/
+    font-size: .12rem;
+    height: auto;
+    /*overflow: hidden;*/
+}
+.list{
+    width: 100%;
+    margin-top: 1.9rem;
+    overflow: hidden;
+}
+.list ul li{
+    padding: .2rem 0;
+    width: 100%;
+    margin-left: .2rem;
+    border-bottom: 1px solid #cccbba;
+}
+.list ul li .img1{
+    width: 1.5rem;
+    height: 1.5rem;
+    float: left;
+}
+.list ul li .box{
+    display: inline-block;
+    float: left;
+    margin-left: .2rem;
+    vertical-align: middle;
+}
+.list ul li .box p{
+    line-height: .2rem;
+    margin-top: .3rem;
+    font-size: .2rem;
+    margin-bottom: .1rem;
+}
+.list ul li .box img{
+    width: .2rem;
+    height: .2rem;
+    vertical-align: middle;
+}
+.list ul li .box span{
+    color: #CCCCCC;
+    font-size: .18rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+.list ul li .img2{
+    width: .16rem;
+    height: .28rem;
+    float: right;
+    vertical-align: middle;
+    margin-right: .35rem;
+    margin-top: .55rem;
+}

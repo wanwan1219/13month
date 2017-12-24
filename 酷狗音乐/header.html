@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="app-mobile-web-app-capable" content="yes">
+    <meta name="app-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/rem-common.js"></script>
+    <!--<script src="js/header.js"></script>-->
+</head>
+<body>
+<div class="header">
+    <div class="logo"><img src="img/logo.png" alt=""/></div>
+    <div class="update">
+        <span>下载酷狗</span>
+    </div>
+    <div class="search">
+        <img src="img/search.png" alt="" onclick="window.open('search.html','_self')"/>
+    </div>
+</div>
+<div class="nav">
+    <ol class="clear table">
+        <li class="cli" onclick="window.open('index.html','_self')">新歌</li>
+        <li onclick="window.open('rank.html#1','_self')">排行</li>
+        <li onclick="window.open('plist.html#2','_self')">歌单</li>
+        <li onclick="window.open('singer.html#3','_self')">歌手</li>
+    </ol>
+</div>
+</body>
+<script>
+    //$(this).addClass("cli").siblings().removeClass("cli");
+    var k=window.location.hash.substring(1);
+    console.log(k);
+    if(k){
+        //$(".nav .table li").eq(k).addClass("cli").siblings().removeClass("cli")
+        $(".nav .table    li").removeClass("cli").eq(k).addClass("cli");
+    }
+</script>
+</html>

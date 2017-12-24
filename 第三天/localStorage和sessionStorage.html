@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //localStorage和sessionStorage和cookie的区别
+    /*localStorage和sessionStorage拓展了cookie存储空间的4k限制 存储大小为5M 存储内容为字符串
+    * localStorage是H5新内容，有兼容性问题
+    * 不能被爬虫爬取到
+    * localStorage需要手动删除是永久性存储，sessionStorage关闭页面或会话结束就会消失，cookie是需要手动设定存储时间
+    * localStorage和sessionStorage存储在web端（浏览器上） cookie存储在服务器  localStorage存储内容过多会导致页面变卡
+    * cookie需要自己封装 localStorage和sessionStorage是H5自带的API
+    * */
+//    setItem存储value
+    /*用途：将value存储到key字段
+    用法：.setItem("key","value");*/
+    localStorage.setItem("site","js");/*永久存储*/
+    sessionStorage.setItem("key","value");/*暂时存储 关闭页面就没了*/
+
+
+
+//    getItem获取value
+    /*用途：获取指定的key本地存储的值
+    用法：.getItem("key")*/
+    var js=localStorage.getItem("site");
+    var value=sessionStorage.getItem("key");
+
+
+
+//    removeItem删除key
+    /*用途：删除指定的key本地存储的值
+     用法：.removeItem("key")*/
+    localStorage.removeItem("site");
+    sessionStorage.removeItem("key");
+
+
+//    clear清除所有的key/value
+    /*用途：删除所有的key/value
+     用法：.clear()*/
+    localStorage.clear();
+    sessionStorage.clear();
+
+
+//    其他操作方法：点操作和[];
+    /*web Storage 不但可以用自身的.setItem.getItem等方便存取，
+    也可以像普通对象一样用.操作及[]的方式进行数据存储*/
+    var storage=window.localStorage;
+    storage.key1="hello";
+    storage["key2"]="world";
+    console.log(storage.key1);
+    console.log(storage["key2"]);
+//    localStorage.clear();
+
+//    localStorage和sessionStorage的key和length属性实现遍历
+    /*localStorage和sessionStorage提供的的key()和length可以方便的实现存储的遍历数据*/
+    for(var i= 0,len=storage.length;i<len;i++){
+        var key=storage.key(i);
+        var value=storage.getItem(key);
+        console.log(key + "=" + value);
+    }
+</script>
+</body>
+</html>

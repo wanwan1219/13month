@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>陪你去看小星星</div>
+</body>
+<script>
+    var div=document.getElementsByTagName("div")[0];
+    div.onclick=function(){
+        var item=div.innerHTML;
+        window.open("search.html?aaa="+item)
+    }
+</script>
+</html>

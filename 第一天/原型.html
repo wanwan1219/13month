@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //创建n个具有name，age，sex属性，并且具有say方法的对象
+    /*var Obj = {
+        name: "aa",
+        age: 13,
+        say: function () {
+
+        }
+    };*/
+
+    /*var obj=new Object();
+     obj.name="aa";
+     obj.sex="nv";
+     obj.age=12;
+     console.log(obj);*/
+
+
+    function Person(a, b, c) { /*Person是一个构造函数*/
+        this.name = a;
+        this.age = b;
+        this.sex = c;
+        /*this.say=function () {
+            console.log(a);
+        };*//*构造方法模式 每new一个对象就会占用一块内存 不建议使用 耗费内存*/
+    }
+    Person.prototype.say=function () {
+        console.log(this.name);
+    };/*混合模式 把方法放在原型中 把属性放在构造函数中*/
+
+    var p1 = new Person("李皖", 12, "女"); /*实例化对象p1*/  /*把构造函数实例化 给一个变量p1*/
+    var p2 = new Person("晓霞", 11, "女"); /*实例化对象p2*/
+
+    console.log(p1);
+    console.log(p2);
+    p1.say();
+    p2.say();
+    console.log(Person.prototype);
+    console.log(p1.__proto__);
+
+    /*传参的两种方式*/
+    function add(w){
+        this.name= w.name;
+        this.age= w.age;
+    }
+    function app(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    add({name:"aaa",age:12});
+    app("aaa",12);
+
+
+    Object.prototype.jx="果果";
+    Function.prototype.jx="apple";
+    var qqq={};
+    console.log(qqq.jx);//果果   一直向上找__proto__直到找到.jx
+    var www=[];
+    console.log(www.jx);//果果
+    var eee=/^\d{3,4}$/;
+    console.log(eee.jx);//果果
+    function rrr(){
+
+    }
+    console.log(rrr.jx);//apple 就近原则
+    var ttt=0;
+    console.log(ttt.jx);//果果
+    var yyy="wwwee";
+    console.log(yyy.jx);//果果
+    console.log(Array.jx);//apple
+    console.log(Object.jx);//apple
+</script>
+</body>
+</html>

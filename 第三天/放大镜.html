@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            position: relative;
+            float: left;
+            margin-bottom: 10px;
+        }
+        .box img{
+            width: 100%;
+            height: 100%;
+        }
+        .box1{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            float: left;
+            overflow: hidden;
+            position: relative;
+            display: none;
+        }
+        .box1 img{
+            width: 100%;
+            height: 100%;
+        }
+        .content{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            display: none;
+            background: rgba(0,0,0,.2);
+        }
+        .over{
+            width: 500%;
+            height: 500%;
+            position: absolute;
+        }
+        .clear{
+            clear: both;
+        }
+        .tab{
+            width: 500px;
+            height: 100px;
+        }
+        .tab img{
+            width: 80px;
+            height: 80px;
+            line-height: 100px;
+            border: 1px solid black;
+            margin-left: 15px;
+        }
+        .tab img:first-child{
+            margin-left: 5px;
+        }
+        .box1 img,.box img{
+            display: none;
+        }
+        .box img:first-of-type{
+            display: block;
+        }
+        .box1 .over img:first-of-type{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="img/da1.jpg" alt=""/>
+    <img src="img/da2.jpg" alt=""/>
+    <img src="img/da3.jpg" alt=""/>
+    <img src="img/da4.jpg" alt=""/>
+    <img src="img/da5.jpg" alt=""/>
+    <div class="content"></div>
+</div>
+<div class="box1">
+    <div class="over">
+        <img src="img/da1.jpg" alt=""/>
+        <img src="img/da2.jpg" alt=""/>
+        <img src="img/da3.jpg" alt=""/>
+        <img src="img/da4.jpg" alt=""/>
+        <img src="img/da5.jpg" alt=""/>
+    </div>
+</div>
+<div class="clear"></div>
+<div class="tab">
+    <img src="img/da1.jpg" alt=""/>
+    <img src="img/da2.jpg" alt=""/>
+    <img src="img/da3.jpg" alt=""/>
+    <img src="img/da4.jpg" alt=""/>
+    <img src="img/da5.jpg" alt=""/>
+</div>
+<script>
+    function cla(a){
+        return document.getElementsByClassName(a);
+    }
+    var box=cla("box")[0];
+    var box1=cla("box1")[0];
+    var over=cla("over")[0];
+    var content=cla("content")[0];
+    var xx= 0,yy=0;
+    box.onmouseover=function(){
+        content.style.display="block";
+        box1.style.display="block";
+    };
+    box.addEventListener("mousemove",function(e){
+        var e=e||window.event;
+        xx= e.pageX-box.offsetLeft;
+        yy= e.pageY-box.offsetTop;
+        if(xx>box.offsetWidth-50){
+            xx=box.offsetWidth-50;
+        }else if(xx<50){
+         xx=50;
+         }
+        if(yy>box.offsetHeight-50){
+            yy=box.offsetHeight-50;
+        }else if(yy<50){
+            yy=50;
+        }
+        content.style.left=(xx-50)+"px";
+        content.style.top=(yy-50)+"px";
+        over.style.left=-(xx-50)*5+"px";
+        over.style.top=-(yy-50)*5+"px";
+    });
+    box.addEventListener("mouseout",function(){
+        content.style.display="none";
+        box1.style.display="none";
+    });
+
+    var tab=cla("tab")[0];
+    var tabimgs=tab.children;
+    var boximgs=box.children;
+    var box1imgs=box1.children[0].children;
+
+
+    for(var i=0;i<tabimgs.length;i++){
+        tabimgs[i].index=i;
+        tabimgs[i].addEventListener("click",function(){
+            var m=this.index;
+            for(var i=0;i<tabimgs.length;i++){
+                boximgs[i].style.display="none";
+                box1imgs[i].style.display="none";
+            }
+            boximgs[m].style.display="block";
+            box1imgs[m].style.display="block";
+        })
+    }
+
+
+    /*for(let j=0;j<5;j++){/!*let块级作用域 不能提升变量名 块级作用域{}表示 但是兼容性不好*!/
+        lis[j].onclick=function(){
+            console.log(j);/!*点谁就出对应的索引*!/
+        }
+    }*/
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+body{
+    margin: 0 auto;
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    font-size: .12rem;
+    height: auto;
+    /*overflow: hidden;*/
+    background: #F2F2F2;
+}

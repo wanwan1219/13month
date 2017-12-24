@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .phone {
+            width: 320px;
+            height: 600px;
+            background: black;
+            margin: 50px auto;
+            /*background: url("");*/
+        }
+        .phone_top{
+            width: 320px;
+            height: 23px;
+            background: url("images/1.png");
+        }
+        .phone .title{
+            width: 320px;
+            height: 30px;
+            background: url("images/2.png");
+            text-align: center;
+            color: white;
+            font:600 20px/30px "simsun";
+        }
+        .phone .singer{
+            width: 320px;
+            height: 40px;
+            color: red;
+            text-align: center;
+            line-height: 40px;
+        }
+        .phone .play{
+            width: 190px;
+            height: 190px;
+            background: url(images/Q1Q1.jpg)-43px 0px;
+            margin: auto;
+            border-radius: 50%;
+        }
+        .rotate{
+            animation: rot 10s linear infinite;
+
+         }
+        @keyframes rot{
+            from{transform: rotate(0deg)}
+            to{transform: rotate(360deg)}
+        }
+        .phone .lrc{
+            width: 300px;
+            height: 285px;
+            /*border: 1px solid red;*/
+            margin: 20px auto;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            overflow: hidden;
+            line-height: 20px;
+        }
+        #cont{
+            position: relative;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+<div class="phone">
+<div class="phone_top"></div>
+    <div class="title">
+        刚好遇见你
+    </div>
+    <div class="singer">李忠阳  无敌大秧歌</div>
+    <div class="play "></div>
+    <div class="lrc">
+        <div id="cont"></div>
+    </div>
+</div>
+<audio src="music/李玉刚-刚好遇见你.mp3" id="myMusic"></audio>
+<textarea name="" id="text">
+[]迈克杰克骚 李忠阳
+[ver:v1.0]
+[ti:刚好遇见你 - 李玉刚]
+[00:00.95]刚好遇见你 - 李玉刚
+[00:02.74]作词：高进
+[00:03.70]作曲：高进
+[00:04.75]编曲：关天天
+[00:12.56]我们哭了
+[00:15.27]我们笑着
+[00:18.60]我们抬头望天空
+[00:21.43]星星还亮着几颗
+[00:24.63]我们唱着
+[00:27.56]时间的歌
+[00:30.62]才懂得相互拥抱
+[00:34.00]到底是为了什么
+[00:36.94]因为我刚好遇见你
+[00:40.32]留下足迹才美丽
+[00:43.69]风吹花落泪如雨
+[00:46.48]因为不想分离
+[00:49.57]因为刚好遇见你
+[00:52.59]留下十年的期许
+[00:55.69]如果再相遇
+[00:59.15]我想我会记得你
+[01:14.28]我们哭了
+[01:16.88]我们笑着
+[01:20.29]我们抬头望天空
+[01:22.96]星星还亮着几颗
+[01:26.11]我们唱着
+[01:29.11]时间的歌
+[01:32.56]才懂得相互拥抱
+[01:35.36]到底是为了什么
+[01:38.47]因为我刚好遇见你
+[01:41.84]留下足迹才美丽
+[01:44.83]风吹花落泪如雨
+[01:47.97]因为不想分离
+[01:51.02]因为刚好遇见你
+[01:54.09]留下十年的期许
+[01:57.23]如果再相遇
+[02:00.69]我想我会记得你
+[02:03.69]因为刚好遇见你
+[02:06.43]留下足迹才美丽
+[02:09.57]风吹花落泪如雨
+[02:12.64]因为不想分离
+[02:15.76]因为刚好遇见你
+[02:18.78]留下十年的期许
+[02:21.83]如果再相遇
+[02:24.98]我想我会记得你
+[02:31.07]因为我刚好遇见你
+[02:34.13]留下足迹才美丽
+[02:37.25]风吹花落泪如雨
+[02:40.37]因为不想分离
+[02:43.43]因为刚好遇见你
+[02:46.48]留下十年的期许
+[02:49.58]如果再相遇
+[02:52.67]我想我会记得你
+</textarea>
+</body>
+
+
+<script>
+  var  oPlay=document.getElementsByClassName("play")[0];
+   var myMusic=document.getElementById("myMusic");
+  var text=document.getElementById("text");
+  var cont=document.getElementById("cont")
+    var onOff=true;
+
+    oPlay.onclick=function(){
+        if(onOff){
+            myMusic.play();
+            onOff=false;
+            this.className="play rotate"
+        }else {
+            myMusic.pause();
+            onOff=true;
+            this.className="play "
+        }
+//onOff=!onOff 简写
+    }
+  var html="";
+    var lrc=text.value;
+    var lrcs=lrc.split("[")//从【符号处切割
+//  console.log(lrcs);
+    for (var i= 0;i<lrcs.length;i++){
+        var arr=lrcs[i].split("]")
+//        console.log(arr);
+//      console.log(arr[1]);
+
+        var time=arr[0].split(".")//把时间从点出切割开
+//        console.log(time[]);
+        var times=time[0].split(":")//把时间从冒号出切割开
+//        console.log(times);
+        var sec=times[0]*60+times[1]*1;
+//        console.log(sec);
+        if(arr[1]){
+            html+="<p id="+sec+">"+arr[1]+"</p>"
+
+        }
+    }
+    cont.innerHTML=html;
+    //歌词同步
+    //监听歌曲的时间
+  var ap=document.getElementsByTagName("p");
+  var num=0;
+    myMusic.addEventListener("timeupdate",function(){
+        var curTime=parseInt(this.currentTime);
+
+        if (document.getElementById(curTime))
+        {
+            for(i=0;i<ap.length;i++){
+                ap[i].style.color="white";
+                ap[i].style.fontSize="14px";
+            }
+            document.getElementById(curTime).style.color="red";
+            document.getElementById(curTime).style.fontSize="20px";
+
+            if (ap[7+num].id==curTime){
+                cont.style.top=-num*20+"px";
+                num++;
+            }
+
+        }
+    })
+
+</script>
+</html>

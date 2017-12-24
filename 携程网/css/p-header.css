@@ -1,0 +1,333 @@
+/*这里是头部*/
+.p-header{
+    position: fixed;
+    background:  #19A0F0;
+}
+.p-box{
+    width: 5.4rem;
+    position: relative;
+    padding: .09rem .15rem;
+    background: #099fde;
+    box-sizing: border-box;
+}
+.p-search{
+    width: 5.1rem;
+    height: .33rem;
+    border-radius: .05rem;
+    background: #fff;
+    position: relative;
+}
+.p-search:before{
+    left: .1rem;
+    top: 50%;
+    margin-top: -.08rem;
+    width: .12rem;
+    height: .12rem;
+    border: .01rem solid #bcbcbc;
+    border-radius: 50%;
+}
+.p-search:after {
+    left: .24rem;
+    top: 50%;
+    margin-top: .02rem;
+    width: .01rem;
+    height: .08rem;
+    background: #bcbcbc;
+}
+.ticket_search_text {
+    padding-left: .35rem;
+    line-height: .33rem;
+    color: #999;
+    font-size: .14rem;
+}
+/*这里是轮播图部分*/
+.ban-warp{
+    width: 100%;
+    height: .84rem;
+    overflow: hidden;
+    position: relative;
+}
+.ban-warp li{
+    float: left;
+}
+.ban{
+    width: 800%;
+    position: relative;
+}
+.ban li{
+    width: 12.5%;
+    height: .84rem;
+}
+.ban li img{
+    width: 100%;
+    height: 100%;
+}
+.ban-warp .ban-xyd{
+    position: absolute;
+    bottom: .06rem;
+    right: .05rem;
+}
+.ban-warp .ban-xyd li{
+    width: .05rem;
+    height: .05rem;
+    border: .01rem solid rgba(5,15,28,.08);
+    background: rgba(255,255,255,.5);
+    border-radius: 50%;
+    margin-left: .05rem;
+}
+.ban-warp .ban-xyd .xyd-has{
+    width: .15rem;
+    border-radius: .3rem;
+    background: white;
+}
+/*这里是购买门票部分*/
+.bay{
+    width: 100%;
+    margin-top: .1rem;
+    background: white;
+    border-bottom: .01rem solid #DFE7E9;
+}
+.bay span{
+    width: 2.67rem;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: .08rem .15rem;
+    line-height: .35rem;
+    font-size: .20rem;
+    text-align: center;
+}
+.bay span+span{
+    border-left: .01rem solid #DFE7E9;
+}
+.bay span i{
+    width: .4rem;
+    height: .35rem;
+    background: url("../img/index_sprite.png") no-repeat;
+    background-position: -.83rem .03rem;
+    background-size: 1.23rem;
+    vertical-align: middle;
+    margin-right: .05rem;
+}
+.bay span .jingdian{
+    background-size: 1.23rem;
+    background-position: -.46rem 0;
+}
+/*这里是人气必买部分*/
+.popular-site {
+    box-sizing: border-box;
+    padding-top: .10rem;
+    font-size: .15rem;
+    background-color: #fff;
+    border-top-width: 0;
+}
+.popular-lab {
+    float: left;
+    min-width: .45rem;
+    line-height: .34rem;
+    text-align: center;
+    background-color: transparent;
+    display: inline-block;
+}
+.bubble {
+    position: relative;
+    width: .44rem;
+    height: .34rem;
+    background: url(../img/popular-site.png) no-repeat;
+    background-size: 100%;
+    margin-top: -.05rem;
+    margin-left: .05rem;
+    background-color: transparent;
+}
+.row {
+    box-sizing: border-box;
+    height: .4rem;
+    flex: 1;
+    display: -webkit-box;
+    overflow-y: hidden;
+}
+.col-auto {
+    height: .24rem;
+    padding-left: .15rem;
+    padding-right: .15rem;
+    text-align: center;
+    line-height: .24rem;
+    white-space: nowrap;
+    border-right: 0.01rem solid #DFE7E9;
+}
+/*这里是选择部分*/
+.choose{
+    width: 5.4rem;
+    margin-top: .1rem;
+    background: white;
+}
+.choose li{
+    float: left;
+    width: 20%;
+    height: .86rem;
+    text-align: center;
+    padding-top: .15rem;
+    font-size: .13rem;
+}
+.choose li img{
+    width: .48rem;
+    height: .48rem;
+    margin-bottom: .1rem;
+}
+/*这里是图片点击部分*/
+.p-sales{
+    margin-top: .1rem;
+}
+.p-sales #p-img img{
+    height: 100%;
+    width: 100%;
+    top:0;
+    left: .25rem;
+}
+/*这里是精选部分*/
+.select{
+    width: 5.4rem;
+    background: white;
+    margin-top: .1rem;
+}
+.select .s-title{
+    width: 100%;
+    height: .34rem;
+    border-bottom: .01rem solid #DFE7E9;
+    font-size: .14rem;
+    color: #999;
+    line-height: .34rem;
+    text-align: center;
+}
+.select .s-title .title-des{
+    display: inline-block;
+    width: 1.02rem;
+    height: .17rem;
+    border-bottom: .01rem solid #999;
+}
+.select .s-title .title-des a{
+    display: inline-block;
+    width: .7rem;
+    text-align: center;
+    color: #999;
+    background: white;
+}
+.select ul{
+    width: 100%;
+}
+.select ul li{
+    width: 100%;
+    height: 1.15rem;
+    padding: .1rem;
+    box-sizing: border-box;
+    border-bottom: .01rem solid #DFE7E9;
+}
+.select ul li .s-img{
+    float: left;
+    width: .95rem;
+    height: .95rem;
+    margin-right: .10rem;
+    display: inline-block;
+    background-color: #eef3f5;
+}
+.select ul li .s-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+/*这里是精选部分的第一行的标题部分*/
+.select ul li .p-block .p-act-title{
+    margin-top: .03rem;
+    line-height: .18rem;
+    color: #000;
+    font-size: .15rem;
+    font-weight: 600;
+}
+/*这里是精选部分的 标题的 第一行*/
+.p-block-item .p-block-detail{
+    height: .15rem;
+    line-height: .16rem;
+    margin-top: .06rem;
+    font-size: .12rem;
+}
+.list-score {
+    font-size: .13rem;
+    color: #099fde;
+    margin-right: .05rem;
+    line-height: .16rem;
+}
+.list-score .list-tkt-score{
+    font-size: .18rem;
+}
+/*月销*/
+.pro-sale-text {
+    line-height: .14rem;
+    font-size: .12rem;
+    color: #999;
+}
+/*这里是精选部分的 标题的 第二行*/
+.p-ib-ellips{
+    margin-top: .08rem;
+    height: .16rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.p-ib-ellips .ib{
+    display: inline-block;
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+.u-pro-tag a{
+    margin-right: .04rem;
+    margin-bottom: .01rem;
+    color: #19a0f0;
+    float: left;
+    padding: .01rem .02rem;
+    font-size: .11rem;
+    line-height: 1;
+    border: .01rem solid rgba(25,160,240,0.3);
+}
+/*这里是精选部分的 标题的 第三行*/
+.pro-block-price {
+    width: .8rem;
+    float: right;
+    text-align: right;
+    flex-direction: column;
+    padding-bottom: .05rem;
+    margin-top: -.2rem;
+}
+.pro-block-price-fan {
+    font-size: .12rem;
+    color: #999;
+    margin-bottom: .06rem;
+}
+.pro-tkt-price-info {
+    font-size: .12rem;
+    color: #f40;
+}
+.pro-tkt-price-info a{
+    font-size: .20rem;
+    font-weight: 700;
+    margin-left: .02rem;
+}
+/*这里是查看全部部分*/
+.index-footer {
+    width: 5.4rem;
+    padding: .1rem;
+    box-sizing: border-box;
+    margin: .05rem 0;
+}
+.index-footer .text {
+    width: 100%;
+    display: inline-block;
+    line-height: .4rem;
+    text-align: center;
+    font-size: .15rem;
+    color: #fff;
+    border-radius: .05rem;
+    background: #179fde;
+    border: none;
+}
+/*这里是底部的图片部分*/
+.foot-img img{
+    width: 5.4rem;
+}

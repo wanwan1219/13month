@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: black;
+        }
+
+        #canvas {
+            display: block;
+            margin: 0 auto;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width=800; height=800;></canvas>
+</body>
+<script>
+
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var now1 = new Date();
+    var a = now1.getSeconds();
+    var x = 400;
+    var y = 300;
+    var r = 200;
+    var bb = now1.getMinutes();
+    var b = now1.getMinutes();
+    var c = now1.getHours() + bb / 60;
+    ctx.save();
+    /*独立空间 不会影响其余的  和restore是一对*/
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = "black";
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2, false);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.restore();
+    //分钟数
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    for (var i = 0; i < 60; i++) {
+        ctx.moveTo(400, 300);
+        ctx.arc(x, y, r, i * Math.PI / 30, i * Math.PI / 30, true);
+    }
+    ctx.closePath();
+    ctx.stroke();
+    //小时数
+    ctx.fillStyle = "white";
+    ctx.beginPath();
+    ctx.arc(x, y, r * 19 / 20, 0, Math.PI * 2, false);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.strokeStyle = "black";
+    ctx.beginPath();
+    ctx.lineWidth = 3;
+    for (var j = 0; j < 12; j++) {
+        ctx.moveTo(400, 300);
+        ctx.arc(x, y, r, j * Math.PI / 6, j * Math.PI / 6, true);
+    }
+    ctx.closePath();
+    ctx.stroke();
+
+
+    ctx.fillStyle = "white";
+    ctx.beginPath();
+    ctx.arc(x, y, r * 18 / 20, 0, Math.PI * 2, false);
+    ctx.closePath();
+    ctx.fill();
+    //    秒针
+    ctx.strokeStyle = "red";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.arc(x, y, r * 8 / 10, (Math.PI * 3 / 2) + (a * Math.PI / 30), (Math.PI * 3 / 2) + (a * Math.PI / 30), true);
+    ctx.closePath();
+    ctx.stroke();
+
+
+    ctx.strokeStyle = "black";
+
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.arc(x, y, r * 7 / 10, (Math.PI * 3 / 2) + (b * Math.PI / 30), (Math.PI * 3 / 2) + (b * Math.PI / 30), true);
+    ctx.closePath();
+    ctx.stroke();
+
+    ctx.strokeStyle = "black";
+
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.arc(x, y, r * 5 / 10, (Math.PI * 3 / 2) + (c * Math.PI / 6), (Math.PI * 3 / 2) + (c * Math.PI / 6), true);
+    ctx.closePath();
+    ctx.stroke();
+
+    ctx.font = "bold 18pt Arial";  // 字体大小，样式
+    ctx.fillStyle = "pink";  // 颜色
+    ctx.textAlign = 'center';  // 位置
+    ctx.moveTo(x, y);  // 文字填充位置
+    ctx.fillText("时钟", x, y);
+
+    //秒针边走变清理  这里是个定时器
+    var timer = setInterval(function () {
+        var now = new Date();
+        a = now.getSeconds();
+        bb = now.getMinutes();
+        b = now.getMinutes() + a / 60;
+        c = now.getHours() + bb / 60;
+
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+//分钟数
+        ctx.save();
+        /*独立空间 不会影响其余的  和restore是一对*/
+        ctx.lineWidth = 5;
+        ctx.strokeStyle = "black";
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2, false);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.restore();
+
+        ctx.strokeStyle = "black";
+        ctx.beginPath();
+        for (var i = 0; i < 60; i++) {
+            ctx.moveTo(400, 300);
+            ctx.arc(x, y, r, i * Math.PI / 30, i * Math.PI / 30, true);
+        }
+        ctx.closePath();
+        ctx.stroke();
+//小时数
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.arc(x, y, r * 19 / 20, 0, Math.PI * 2, false);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.strokeStyle = "black";
+        ctx.beginPath();
+        ctx.lineWidth = 3;
+        for (var j = 0; j < 12; j++) {
+            ctx.moveTo(400, 300);
+            ctx.arc(x, y, r, j * Math.PI / 6, j * Math.PI / 6, true);
+        }
+        ctx.closePath();
+        ctx.stroke();
+
+
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.arc(x, y, r * 18 / 20, 0, Math.PI * 2, false);
+        ctx.closePath();
+        ctx.fill();
+        //    秒针
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.arc(x, y, r * 8 / 10, (Math.PI * 3 / 2) + (a * Math.PI / 30), (Math.PI * 3 / 2) + (a * Math.PI / 30), true);
+        ctx.closePath();
+        ctx.stroke();
+
+        console.log(b);
+        ctx.strokeStyle = "black";
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.arc(x, y, r * 7 / 10, (Math.PI * 3 / 2) + (b * Math.PI / 30), (Math.PI * 3 / 2) + (b * Math.PI / 30), true);
+        ctx.closePath();
+        ctx.stroke();
+
+
+        ctx.strokeStyle = "black";
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.arc(x, y, r * 5 / 10, (Math.PI * 3 / 2) + (c * Math.PI / 6), (Math.PI * 3 / 2) + (c * Math.PI / 6), true);
+        ctx.closePath();
+        ctx.stroke();
+
+
+        ctx.font = "bold 18pt Arial";  // 字体大小，样式
+        ctx.fillStyle = "pink";  // 颜色
+        ctx.textAlign = 'center';  // 位置
+        ctx.moveTo(x, y);  // 文字填充位置
+        ctx.fillText("时钟", x, y);
+
+
+    }, 1000);
+
+
+</script>
+</html>

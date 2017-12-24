@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="apple-mobole-web-app-capable" content="yes">
+    <meta name="apple-mobole-web-app-status-bar-style" content="black" >
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <title>我的携程</title>
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/M-header.css">
+</head>
+<body>
+<!--这里是头部-->
+<div class="header">
+   <div class="header-bar">
+       <div class="back" onclick="javascript:window.open('index.html')">
+           <i></i>
+       </div>
+       <div class="xx">
+           <i></i>
+       </div>
+   </div>
+    <h1>登录携程，开启旅程</h1>
+    <div class="login-box">
+        <button class="home-btn" style="margin-right: .2rem" onclick="javascript:window.open('denglu.html')">登录/注册</button>
+        <button class="home-btn home-btn-primary">手机号查单</button>
+    </div>
+</div>
+<!--这里是home-list部分-->
+<div class="home-list">
+    <div class="home-top">
+        <i></i>
+        <p>钱包</p>
+        <p class="home-top-bot">&nbsp;礼品卡&nbsp;<small class="separator">&nbsp; | &nbsp;</small>&nbsp;现金&nbsp;<small class="separator">&nbsp;|&nbsp;</small>&nbsp;返现&nbsp;</p>
+    </div>
+    <ul>
+        <li>
+            <p><i></i>&nbsp;&nbsp;&nbsp;优惠券</p>
+            <p class="hom-p2">领券</p>
+        </li>
+        <li>
+            <p><i style="background-position: 0 -1.1rem;"></i>&nbsp;&nbsp;&nbsp;积分</p>
+            <p class="hom-p2">兑好礼</p>
+        </li>
+        <li>
+            <p><i style="background-position: -.2rem -1.5rem;"></i>&nbsp;&nbsp;&nbsp;拿去花</p>
+            <p class="hom-p2">分期付款</p>
+        </li>
+    </ul>
+</div>
+<!--这里是列表部分-->
+<ul class="list">
+    <li>常用信息<em>旅客/地址/发票抬头</em></li>
+    <li>我的收藏<em>降价产品有提醒</em></li>
+    <li>浏览历史<em>近15天访问记录</em></li>
+    <li>我要合作<em>供应商加盟/代理合作</em></li>
+</ul>
+<ul class="list" style="margin-bottom: .1rem">
+    <li>出行工具<em>航班动态/翻译助手等</em></li>
+</ul>
+</body>
+<script>
+    (function(num){
+        var resizeEvt = 'orientationchange'in window ? 'orientationchange':'resize',   //判断是横竖屏显示 resize是设置大小 “？”判断条件是否符合  符合返回条件1 不符合返回条件2
+                doc = document.documentElement,               //声明doc为html也就是当前窗口
+                recalc = function(){
+                    var clientWidth = doc.clientWidth;       //获取当前窗口的大小
+                    if(!clientWidth)return;                 //判断是否获取到当前窗口的宽 如果获取不到就跳出语句 下面的不执行 “ ！”是取反
+                    if(clientWidth>num){                  //如果当前获取的窗口的大小大于老板规定的移动端网页的定宽   则让他等于定宽
+                        clientWidth=num }
+                    doc.style.fontSize = 100*(clientWidth/num)+'px';        //设置当前html（body）的fondSize为多少px  为了让 rem 为自适应屏幕大小
+                };
+        if(!document.addEventListener)return;         //判断当前浏览器的支持不支持监听事件 如果获取不到就跳出语句 下面的不执行
+        window.addEventListener(resizeEvt,recalc);     //如果支持了就给当前窗口添加监听他的“resizeEvt”（前面自己定义的）事件（屏幕是否横竖屏 以及 屏幕大小是否改变）
+        document.addEventListener("DOMContentLoaded",recalc);
+    })(540);
+</script>
+</html>

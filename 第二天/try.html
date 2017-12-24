@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+    var f=0;
+    console.log(f);
+    try{
+        console.log(n);/*0*//*可能回报错的代码 如果报错就不执行 执行下面的代码 如果不报错 就执行这一块和下面的代码*/
+    }catch(e){
+        n=111;
+        console.log(e);/*ReferenceError: n is not defined at try.html:14*//*try程序块，报错的提示传给e*/
+    }
+    console.log(f);/*0*/
+    console.log(n);/*111*/
+</script>
+</html>

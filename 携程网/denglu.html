@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="apple-mobole-web-app-capable" content="yes">
+    <meta name="apple-mobole-web-app-status-bar-style" content="black" >
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/D-head.css">
+</head>
+<body>
+<!--这里是头部部分-->
+<div class="header">
+        <div class="back" onclick="javascript:window.open('me.html')">
+            <i></i>
+        </div>
+        <div class="xx" onclick="javascript:window.open('zuce.html')">注册</div>
+</div>
+<div class="zw" style="height: .44rem"></div>
+<!--这里是登录注册部分-->
+<div class="page">
+    <h2>携程账号登录</h2>
+    <form class="login_box" action="">
+        <div class="login_box_div user">
+            <p>
+                <input type="text" placeholder="国内手机号/用户名/邮箱/卡号" maxlength="30">
+            </p>
+            <p>
+                <input type="password" placeholder="登录密码" maxlength="20" style="width: 80%">
+                <a class="pass-a">找回密码</a>
+            </p>
+            <p>
+                <input type="button" value="登录" class="btn">
+            </p>
+            <p class="other">
+                <a class="forget">手机动态密码登录</a>
+                <a href="javascript:void(0)" class="intel_mobile" style="float: right">境外手机登录</a>
+            </p>
+        </div>
+    </form>
+</div>
+<!--这里是底部的登录方式菜单条部分-->
+<ul class="footer clean">
+    <li>
+        <a><i></i></a>
+    </li>
+    <li style="width: 34%">
+        <a><i style="background-position: -.01rem -.45rem;"></i></a>
+    </li>
+    <li>
+        <a><i style="background-position: -.01rem -.65rem"></i></a>
+    </li>
+    <p class="agreement" id="law_rule">登录即代表您同意我们的 <a id="agreement">服务协议</a> 和 <a id="policy">隐私政策</a></p>
+</ul>
+</body>
+<script>
+    (function(num){
+        var resizeEvt = 'orientationchange'in window ? 'orientationchange':'resize',   //判断是横竖屏显示 resize是设置大小 “？”判断条件是否符合  符合返回条件1 不符合返回条件2
+                doc = document.documentElement,               //声明doc为html也就是当前窗口
+                recalc = function(){
+                    var clientWidth = doc.clientWidth;       //获取当前窗口的大小
+                    if(!clientWidth)return;                 //判断是否获取到当前窗口的宽 如果获取不到就跳出语句 下面的不执行 “ ！”是取反
+                    if(clientWidth>num){                  //如果当前获取的窗口的大小大于老板规定的移动端网页的定宽   则让他等于定宽
+                        clientWidth=num }
+                    doc.style.fontSize = 100*(clientWidth/num)+'px';        //设置当前html（body）的fondSize为多少px  为了让 rem 为自适应屏幕大小
+                };
+        if(!document.addEventListener)return;         //判断当前浏览器的支持不支持监听事件 如果获取不到就跳出语句 下面的不执行
+        window.addEventListener(resizeEvt,recalc);     //如果支持了就给当前窗口添加监听他的“resizeEvt”（前面自己定义的）事件（屏幕是否横竖屏 以及 屏幕大小是否改变）
+        document.addEventListener("DOMContentLoaded",recalc);
+    })(540);
+</script>
+</html>

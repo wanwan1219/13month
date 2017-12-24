@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+
+
+<script>
+    /*this是函数的关键字，并不是面向对象的关键字*/
+
+
+//    函数中：
+    function aa(){
+        console.log(this);/*this指向window*/
+    }
+    aa();
+
+
+//   构造函数中
+    function Bb(a){
+        this.a=a;
+        console.log(this);/*this指向window*/
+    }
+    var  bb=new Bb(12);
+    console.log(bb.a);/*this指向bb*/
+
+
+//    对象的方法中
+    var ff={
+        obj:"你好",
+        mm:function(){
+            console.log(this);
+        }
+    };
+    ff.mm();/*this指向ff（对象自己）*/
+
+
+
+//    闭包 作用域链
+    function fnn1(){
+        var f=10;
+        return function fnn2(){
+            console.log(f);
+        }
+    }
+    var fff=fnn1();
+    fff();
+
+
+    function fnn2(){
+        var n=9;
+        return{
+           /* nn:function(g){
+                n=g;
+            },
+            qq:function(){
+                console.log(n);
+            }*/
+            set qq(g){
+                n=g;
+            },
+            get qq(){
+                console.log(n);
+            }
+        }
+    }
+    var ffff=fnn2();
+   /* ffff.qq();/!*直接打印*!/
+    ffff.nn(122);/!*设置*!/
+    ffff.qq();/!*设置后再打印*!/*/
+    /*设置和获取*/
+    ffff.qq;
+    ffff.qq=123;
+    ffff.qq;
+
+
+
+</script>
+</html>

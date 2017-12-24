@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="apple-mobole-web-app-capable" content="yes">
+    <meta name="apple-mobole-web-app-status-bar-style" content="black" >
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <title>携程酒店</title>
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/H-header.css">
+</head>
+<body>
+<!--这里是头部-->
+<div class="header clean">
+    <div class="back" onclick="javascript:window.open('index.html')">
+       <i></i>
+    </div>
+    <p>国内/海外酒店</p>
+    <div class="dl">
+        <i></i>
+        <a>未登录</a>
+    </div>
+</div>
+<!--这里是占位的空盒子-->
+<div class="zw" style="height: 0.6rem;width: 100%"></div>
+<!--这里是广告部分-->
+<div class="hb">
+    <img src="img/index-hb.jpg" alt="">
+</div>
+<!--这里是整个内容部分-->
+<ul class="content">
+    <li class="cont-one">
+        <p>
+           <a class="cont-on-top">目的地</a>
+           <a class="cont-on-top2">上海</a>
+           <img src="img/dj.png" alt="">
+        </p>
+        <img src="img/dangqian.png" alt="" style="width: .48rem;height: .48rem;margin-top: -.24rem;right: .2rem">
+    </li>
+    <li>
+        <a class="cont-on-top">入驻</a>
+        <a class="cont-on-top" style="margin-left: 50%">离店</a>
+        <a class="cont-on-top2 now-day"></a>
+        <a class="cont-on-top2 tomorrow-day" style="margin-left: 50%"></a>
+        <a class="cont-on-top top-left">今天</a>
+        <a class="cont-on-top top-left" style="left: 3.7rem">明天</a>
+        <span class="days">1晚</span>
+        <img src="img/dj.png" alt="">
+    </li>
+    <li>
+        <p class="star-p">关键字/位置/品牌/酒店名</p>
+        <img src="img/dj.png" alt="">
+    </li>
+    <li>
+        <p class="star-p">星级/价格</p>
+        <img src="img/dj.png" alt="">
+    </li>
+    <li>
+        <button class="btn">查询</button>
+        <span class="search">查找附近酒店</span>
+    </li>
+</ul>
+<!--这里是我的订单部分-->
+<div class="me">我的订单</div>
+<!--这里是选择部分-->
+<div class="choose-bar">
+    <div>
+        <img src="img/choose1.png" alt="">
+    </div>
+    <div>
+        <p><img src="img/choose2.png" alt=""></p>
+        <p><img src="img/choose3.png" alt=""></p>
+    </div>
+    <div>
+        <p><img src="img/choose4.png" alt=""></p>
+        <p><img src="img/choose5.png" alt=""></p>
+    </div>
+</div>
+<!--这里是最底部-->
+<div class="bottom">
+    <img src="img/botm.png" alt="">
+</div>
+</body>
+<script>
+    (function(num){
+        var resizeEvt = 'orientationchange'in window ? 'orientationchange':'resize',   //判断是横竖屏显示 resize是设置大小 “？”判断条件是否符合  符合返回条件1 不符合返回条件2
+                doc = document.documentElement,               //声明doc为html也就是当前窗口
+                recalc = function(){
+                    var clientWidth = doc.clientWidth;       //获取当前窗口的大小
+                    if(!clientWidth)return;                 //判断是否获取到当前窗口的宽 如果获取不到就跳出语句 下面的不执行 “ ！”是取反
+                    if(clientWidth>num){                  //如果当前获取的窗口的大小大于老板规定的移动端网页的定宽   则让他等于定宽
+                        clientWidth=num }
+                    doc.style.fontSize = 100*(clientWidth/num)+'px';        //设置当前html（body）的fondSize为多少px  为了让 rem 为自适应屏幕大小
+                };
+        if(!document.addEventListener)return;         //判断当前浏览器的支持不支持监听事件 如果获取不到就跳出语句 下面的不执行
+        window.addEventListener(resizeEvt,recalc);     //如果支持了就给当前窗口添加监听他的“resizeEvt”（前面自己定义的）事件（屏幕是否横竖屏 以及 屏幕大小是否改变）
+        document.addEventListener("DOMContentLoaded",recalc);
+    })(540);
+        var timer=setInterval(function(){
+            clearInterval(timer);
+            var data=new Date(),
+                    math=data.getMonth()+ 1,
+                    day=data.getDate(),
+                    mday=day+ 1,
+                    nd=document.getElementsByClassName("now-day")[0],
+                    td=document.getElementsByClassName("tomorrow-day")[0];
+            nd.innerHTML=math+"月"+day+"日";
+            td.innerHTML=math+"月"+mday+"日";
+        },1000);
+</script>
+</html>

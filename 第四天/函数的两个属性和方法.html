@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<script>
+    function show(sex){
+        console.log("普通函数" + sex);
+        console.log(this.name);
+    }
+    var person={
+        name:"aa",
+        age:14
+    };
+    var name="11";
+    show.call(person,"男");/*person调用 this指向 person*/   /*不需要调用就能执行*/  /*普通函数男 aa*/
+    show.apply(null,["女"]);/*window调用 this指向window 打印11*/   /*不需要调用就能执行*/ /*普通函数女 11*/
+    var ss=show.bind(person,"不用");
+    ss();/*bind必须要调用才会执行*/  /*普通函数不用 aa*/
+
+
+    var arr=[1,4,32,3,7];
+    Math.max.apply(null,arr); /*返回数组中最大的数*/
+
+
+
+    {
+        //console.log(a);/*报错 let不能提升变量名*/
+        let a=10;
+        //let a=11;/*不能重复声明*/
+        console.log(a);/*10*/
+    }
+    //console.log(a);/*报错 块以外无法访问*/
+
+    /*for(let i=0;i<5;i++){
+        li[i].onclick=function(){
+            console.log(i);/!*点哪个返回对应的下脚标*!/
+        }
+    }*/
+    /*for(var i=0;i<5;i++){
+        li[i].onclick=function(){
+            console.log(i);/!*5*!/
+        }
+    }*/
+   /* for(var i=0;i<5;i++){
+        setTimeout(function(){
+            console.log(i);/!*5*!/
+        },0)
+    }*/
+    /*for(let i=0;i<5;i++){
+        setTimeout(function(){
+            console.log(i);/!*1*!//!*2*!//!*3*!//!*4*!//!*5*!/
+        },0)
+    }*/
+    {
+        //console.log(m);/*除了不能改变值以外 都与let相同*/
+        const m=100;
+        //const m=111;/*声明 常量 不能改变值否则报错 */
+        console.log(m);
+    }
+    //console.log(m);
+
+
+    //解构
+    var lis=document.querySelectorAll("li");
+    let [li1,li2,li3,li4,li5]=lis;
+    console.log(li4);
+</script>
+</body>
+</html>

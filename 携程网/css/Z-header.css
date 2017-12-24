@@ -1,0 +1,37 @@
+.header .header-title{
+    margin-left: -.25rem;
+    line-height: .44rem;
+    font-size: .16rem;
+    box-sizing: border-box;
+    color: #999;
+}
+.page-p2-time{
+    height: .55rem;
+    width: 18%;
+    border: none;
+    background: white;
+    color: #c6c9c2;
+    box-sizing: border-box;
+}
+.time-have{
+    border: 0.01rem solid #CCCCCC;
+    color: #1b6d85;
+    border-radius: .05rem;
+    background: rgba(253, 107, 111, 0.16);
+}
+p.dj-tz{
+    text-align: center;
+    margin-top: .2rem;
+}
+p.dj-tz .btn{
+    width: 2rem;
+    height: .6rem;
+    border: none;
+    background: white;
+    font-size: .2rem;
+    color: #0a56bb;
+    outline: none;
+}
+.dj-tz a{
+    display: block;
+}

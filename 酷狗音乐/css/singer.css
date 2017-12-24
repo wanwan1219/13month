@@ -1,0 +1,40 @@
+body{
+    margin: 0 auto;
+    width: 100%;
+    min-width: 320px;
+    /*max-width: 640px;*/
+    font-size: .12rem;
+    height: auto;
+    /*overflow: hidden;*/
+}
+.bd{
+    width: 100%;
+    margin-top: 1.9rem;
+    overflow: hidden;
+}
+.singer-class-list {
+    margin: .2rem .15rem;
+    background: #fbfbfb;
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
+}
+.singer-class-list li:first-child {
+    border-top: none;
+}
+.singer-class-list li {
+    border-top: 1px solid #e4e4e4;
+}
+.singer-class-list li p{
+    line-height: .55rem;
+    float: left;
+    font-size: .2rem;
+    color: #333;
+    margin-left: .15rem;
+}
+.singer-class-list li img{
+    float: right;
+    margin-right: .15rem;
+    width: .11rem;
+    height: .2rem;
+    margin-top: .15rem;
+}

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="apple-mobole-web-app-capable" content="yes">
+    <meta name="apple-mobole-web-app-status-bar-style" content="black" >
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <title>机票</title>
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/F-header.css">
+</head>
+<body>
+<!--这里是头部-->
+<div class="header clean">
+    <div class="logo" onclick="javascript:window.open('index.html')">
+        <img src="img/logo.png" alt="">
+    </div>
+    <ul class="cont clean">
+        <li class="cont-have">国内</li>
+        <li>国际</li>
+    </ul>
+    <p onclick="javascript:window.open('denglu.html')">登录</p>
+</div>
+<div class="warp">
+    <!--这里是选择飞机票部分-->
+    <div class="choose">
+        <ul class="content">
+            <li>
+                <p><input type="text" value="北京"></p>
+                <img src="img/feiji.png" alt="" style="width: .66rem;height: .67rem">
+                <p class="cont-rt"><input type="text" value="上海"></p>
+            </li>
+            <li>
+                <p>
+                    <a class="data-a date-hint">去程</a>
+                    <a class="date-label">11月09日</a>
+                    <a class="data-a date-tip">今天</a>
+                </p>
+                <p class="cont-rt">
+                    <a class="data-a date-hint2">返程</a>
+                    <a class="date-label">-&nbsp;&nbsp;&nbsp;-</a>
+                </p>
+            </li>
+            <li>
+                <p class="airline-class">经济舱</p>
+            </li>
+            <li class="btn"><input type="button" value="搜索"></li>
+            <li class="seach">
+                <div>
+                    <img src="img/dingdan.png" alt="">
+                    我的订单
+                </div>
+                <div>
+                    <img src="img/dongtai.png" alt="">
+                    航班动态
+                </div>
+                <div>
+                    <img src="img/zaixian.png" alt="">
+                    在线值机
+                </div>
+                <div>
+                    <img src="img/find.png" alt="">
+                    发现低价
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--这里是猜你喜欢部分-->
+    <div class="like">
+       <div class="top"><img src="img/lick.png" alt=""></div>
+        <ul class="content">
+            <li class="clean">
+                <div class="like-lt">
+                    <p>北京 → 深圳</p>
+                    <p class="like-p2">12月04日(周一)</p>
+                    <span>¥520</span>
+                </div>
+                <div class="like-rt">
+                     <p>北京 → 杭州</p>
+                    <p class="like-p2">11月19日(周日)</p>
+                    <span>¥360</span>
+                </div>
+            </li>
+            <li class="clean">
+                <div class="like-lt">
+                     <p>北京 → 三亚</p>
+                    <p class="like-p2">11月27日(周一)</p>
+                    <span>¥1210</span>
+                </div>
+                <div class="like-rt">
+                     <p>北京 → 哈尔滨</p>
+                    <p class="like-p2">12月04日(周一)</p>
+                    <span>¥520</span>
+                </div>
+            </li>
+            <li class="clean">
+                <div class="like-lt">
+                     <p>北京 → 长沙</p>
+                    <p class="like-p2">12月04日(周一)</p>
+                    <span>¥520</span>
+                </div>
+                <div class="like-rt">
+                     <p>北京 → 大连</p>
+                    <p class="like-p2">12月04日(周一)</p>
+                    <span>¥120</span>
+                </div>
+            </li>
+            <li class="clean">
+                <div class="like-lt">
+                     <p>北京 → 东营</p>
+                    <p class="like-p2">12月04日(周一)</p>
+                    <span>¥520</span>
+                </div>
+                <div class="like-rt">
+                     <p>北京 → 郑州</p>
+                    <p class="like-p2">12月04日(周一)</p>
+                    <span>¥520</span>
+                </div>
+            </li>
+            <p class="like-more">查看更多低价 ></p>
+        </ul>
+    </div>
+    <!--这里是热门公园部分-->
+    <div class="hotpark">
+        <div class="hot">
+            <div class="top"><img src="img/热门公园.png" alt=""></div>
+            <ul class="content">
+                <div class="park"><img src="img/bach.png" alt=""></div>
+                <li>
+                    <img src="img/三亚.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 三亚</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/厦门.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 厦门</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/深圳.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 深圳</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <p class="like-more">去海岛沙滩主题 ></p>
+            </ul>
+        </div>
+        <div class="hot">
+            <ul class="content">
+                <div class="park"><img src="img/bach.png" alt=""></div>
+                <li>
+                    <img src="img/成都.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 成都</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/南京.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 南京</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/福州.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 福州</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <p class="like-more">去海岛沙滩主题 ></p>
+            </ul>
+        </div>
+        <div class="hot">
+            <ul class="content">
+                <div class="park"><img src="img/bach.png" alt=""></div>
+                <li>
+                    <img src="img/上海.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 上海</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/广州.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 广州</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/哈尔滨.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 哈尔滨</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <p class="like-more">去海岛沙滩主题 ></p>
+            </ul>
+        </div>
+        <div class="hot">
+            <ul class="content">
+                <div class="park"><img src="img/bach.png" alt=""></div>
+                <li>
+                    <img src="img/昆明.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 昆明</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/南宁.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 南宁</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/温州.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 温州</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <p class="like-more">去海岛沙滩主题 ></p>
+            </ul>
+        </div>
+        <div class="hot">
+            <ul class="content">
+                <div class="park"><img src="img/bach.png" alt=""></div>
+                <li>
+                    <img src="img/武汉.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 武汉</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/新加坡.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 新加坡</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/台北.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 台北</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <p class="like-more">去海岛沙滩主题 ></p>
+            </ul>
+        </div>
+        <div class="hot">
+            <ul class="content">
+                <div class="park"><img src="img/bach.png" alt=""></div>
+                <li>
+                    <img src="img/乌鲁木齐.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 乌鲁木齐</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/丽江.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 丽江</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/黄山.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 黄山</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <p class="like-more">去海岛沙滩主题 ></p>
+            </ul>
+        </div>
+        <div class="hot">
+            <ul class="content">
+                <div class="park"><img src="img/bach.png" alt=""></div>
+                <li>
+                    <img src="img/鄂尔多斯.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 鄂尔多斯</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/满洲里.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 满洲里</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/赤峰.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 赤峰</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <p class="like-more">去海岛沙滩主题 ></p>
+            </ul>
+        </div>
+        <div class="hot">
+            <ul class="content">
+                <div class="park"><img src="img/bach.png" alt=""></div>
+                <li>
+                    <img src="img/桂林.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 桂林</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/舟山.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 舟山</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/绵阳.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 绵阳</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <p class="like-more">去海岛沙滩主题 ></p>
+            </ul>
+        </div>
+        <div class="hot">
+            <ul class="content">
+                <div class="park"><img src="img/bach.png" alt=""></div>
+                <li>
+                    <img src="img/曼谷.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 曼谷</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/香港.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 香港</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/首尔.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 首尔</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <p class="like-more">去海岛沙滩主题 ></p>
+            </ul>
+        </div>
+        <div class="hot">
+            <ul class="content">
+                <div class="park"><img src="img/bach.png" alt=""></div>
+                <li>
+                    <img src="img/长沙.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 长沙</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/巴厘岛.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 巴厘岛</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/澳门.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 澳门</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <p class="like-more">去海岛沙滩主题 ></p>
+            </ul>
+        </div>
+        <div class="hot">
+            <ul class="content">
+                <div class="park"><img src="img/bach.png" alt=""></div>
+                <li>
+                    <img src="img/济州岛.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 九州岛</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/丽江.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 丽江</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/黄山.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 黄山</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <p class="like-more">去海岛沙滩主题 ></p>
+            </ul>
+        </div>
+        <div class="hot">
+            <ul class="content">
+                <div class="park"><img src="img/bach.png" alt=""></div>
+                <li>
+                    <img src="img/成都.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 成都</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/南京.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 南京</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <li>
+                    <img src="img/福州.jpg" alt="">
+                <span>
+                    <p>北京 ⇌ 福州</p>
+                    <p class="like-p2">11月29日 (周三)  ~  12月01日 (周五)</p>
+                    <a>¥1420</a>
+                </span>
+                </li>
+                <p class="like-more">去海岛沙滩主题 ></p>
+            </ul>
+        </div>
+    </div>
+
+    <!--这里是底部更多部分-->
+    <div class="more-promote-box" style="">
+        <span class="btn-more">去发现低价频道 ></span>
+    </div>
+</div>
+
+</body>
+<script>
+    (function(num){
+        var resizeEvt = 'orientationchange'in window ? 'orientationchange':'resize',   //判断是横竖屏显示 resize是设置大小 “？”判断条件是否符合  符合返回条件1 不符合返回条件2
+                doc = document.documentElement,               //声明doc为html也就是当前窗口
+                recalc = function(){
+                    var clientWidth = doc.clientWidth;       //获取当前窗口的大小
+                    if(!clientWidth)return;                 //判断是否获取到当前窗口的宽 如果获取不到就跳出语句 下面的不执行 “ ！”是取反
+                    if(clientWidth>num){                  //如果当前获取的窗口的大小大于老板规定的移动端网页的定宽   则让他等于定宽
+                        clientWidth=num }
+                    doc.style.fontSize = 100*(clientWidth/num)+'px';        //设置当前html（body）的fondSize为多少px  为了让 rem 为自适应屏幕大小
+                };
+        if(!document.addEventListener)return;         //判断当前浏览器的支持不支持监听事件 如果获取不到就跳出语句 下面的不执行
+        window.addEventListener(resizeEvt,recalc);     //如果支持了就给当前窗口添加监听他的“resizeEvt”（前面自己定义的）事件（屏幕是否横竖屏 以及 屏幕大小是否改变）
+        document.addEventListener("DOMContentLoaded",recalc);
+    })(540);
+</script>
+</html>

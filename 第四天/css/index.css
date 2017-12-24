@@ -1,0 +1,300 @@
+.inner{
+    width: 1024px;
+    margin: 0 auto;
+}
+.header-top{
+    padding-top: 5px;
+    width: 100%;
+    border-bottom: 1px solid #EEEEEE;
+}
+.header-top .inner .header-load{
+    float: right;
+}
+.header-top .inner span{
+    font-size: 12px;
+    display: inline-block;
+    float: left;
+    line-height: 20px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.header-top .inner .load{
+    color: #999999;
+}
+.header-bottom{
+    width: 100%;
+}
+.header-bottom .inner .logo{
+    float: left;
+    width: 173px;
+    height: 70px;
+}
+.header-bottom .inner .logo img{
+    width: 100%;
+    height: 100%;
+}
+.header-bottom .inner ul{
+    margin-top: 10px;
+    float: right;
+}
+.header-bottom .inner ul>li{
+    float: left;
+    font-size: 18px;
+    padding: 20px 25px 20px 30px;
+    color: #999999;
+    position: relative;
+    z-index: 3;
+}
+.header-bottom .inner ul>.icon1 i{
+    display: block;
+    width: 20px;
+    height: 22px;
+    background: url("../img/search.png") no-repeat 0 0;
+}
+.header-bottom .inner ul>li:hover{
+    background: #1D4355;
+    color: white;
+}
+.header-bottom .inner ul>.icon1:hover i{
+    background-position: 0 -20px;
+}
+.header-bottom .inner ul .cli{
+    color: rgb(0,152,221);
+}
+.header-bottom .inner ul li dl{
+    display: none;
+    position: absolute;
+    z-index: 3;
+    top:60px;
+    left: 50%;
+    margin-left: -250px;
+    background: pink;
+    width: 500px;
+}
+.header-bottom .inner ul li dl dd{
+    margin-right: 30px;
+    text-align: center;
+    font-size: 15px;
+    float: left;
+    padding: 10px;
+    color: black;
+    line-height: 50px;
+}
+.banner{
+    width: 100%;
+    height: 420px;
+    background:#263741 url("../img/banner_bg.jpg") no-repeat center;
+    background-size: 100% 100%;
+    position: relative;
+}
+.banner .wrap{
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    position: relative;
+}
+.banner ul{
+    width:1000%;
+    position: absolute;
+}
+.banner ul li{
+    float: left;
+}
+.banner ul li .inner .p1{
+    position: relative;
+    color: white;
+    font-size: 30px;
+    line-height: 50px;
+    left: 0;
+    right:0;
+    float: left;
+}
+.banner ul li .inner .img1{
+    float: right;
+    position: relative;
+    left: 0;
+    right:0;
+}
+.banner ol{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -150px ;
+}
+.banner ol .col{
+    background: #Ccc;
+}
+.banner ol li{
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    float: left;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: white;
+}
+.banner .click div{
+    width: 30px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    position: absolute;
+    top:50%;
+    margin-top: -25px;
+    font-weight: 900;
+    color: white;
+}
+.banner .click .next{
+    right: 30px;
+}
+.banner .click .prev{
+    left: 30px;
+}
+.kf{
+    width: 100%;
+    background: #2F383D;
+}
+.kf ul>li{
+    text-align: center;
+    width: 25%;
+    float: left;
+    line-height: 100px;
+    font-size: 19px;
+    color: white;
+    position: relative;
+    z-index: 5;
+}
+.kf ul li ol{
+    display: none;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top:100px;
+    z-index: 5;
+}
+.kf ul li ol li{
+    background: pink;
+    font: 30px/50px "";
+    text-align: center;
+    color: blue;
+}
+.kf ul li:hover ol{
+    display: block;
+}
+.sq{
+    width: 100%;
+}
+.sq .inner{
+    text-align: center;
+}
+.sq .inner span{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    color: rgb(0,152,221);
+    background: #EEEEEE;
+    width: 240px;
+    height: 66px;
+    line-height: 66px;
+}
+.sq .inner span:hover{
+    color: white;
+    background:rgb(0,152,221);
+}
+.main1{
+    width:100%;
+    background:#E8EFF2;
+}
+.main1 .platform ul{
+    margin-top: 40px;
+    *margin-left: -159px;
+}
+.main1 .platform ul li{
+    margin-bottom: 60px;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 37px;
+    width: 316px;
+    height: 180px;
+    float: left;
+    /*position: relative;*/
+
+}
+.main1 .platform ul li .wrap{
+    width:316px;
+    height:180px;
+    position:relative;
+    transform-style: preserve-3d;
+    -webkit-transition: all .5s ease 0s;
+    -moz-transition: all .5s ease 0s;
+    -ms-transition: all .5s ease 0s;
+    -o-transition: all .5s ease 0s;
+    transition: all .5s ease 0s;
+}
+.main1 .platform ul li .positive{
+    background: #fff;
+    padding-top: 40px;
+    margin: 0 auto;
+    text-align: center;
+    width: 316px;
+    height: 140px;
+    border: 1px solid #DFE3E5;
+    position:absolute;
+    top:0;
+    z-index: 999;
+}
+.main1 .platform ul li i{
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: url(../img/platform_icon.png) no-repeat 0 0;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    margin-left: -30px;
+}
+.main1 .platform ul li p{
+    margin: 0 auto;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    font-family: "Microsoft YaHei", 'Î¢ÈíÑÅºÚ';
+    color: #362526;
+    font-size: 20px;
+    line-height: 40px;
+}
+.main1 .platform  ul li span{
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0 auto;
+    display: block;
+    width: 230px;
+    color: #887373;
+    text-align: left;
+}
+.main1 .platform ul li .info{
+    width: 316px;
+    height: 180px;
+    position:absolute;
+    top:0;
+    background:pink;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+.main1 .platform ul li:hover .wrap{
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform:rotateY(180deg);
+}
+.main1 .platform ul li .info i{
+    margin-left:-31px;
+    *margin-left:-29px;
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+<div class="bob">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</div>
+<p>变量的解构</p>
+<img src="img/VKSZ6__AM%5DZEL9CSBSVQ4TJ.jpg" alt="">
+<p>数值的扩展</p>
+<img src="img/6VA~NW@~2TBUFYCGDZ(~DFH.jpg" alt="">
+<img src="img/]@VB[%UQ~SG5Q{_@XGQ{2{B.jpg" alt="">
+<img src="img/MEGY~YZSXRZ$LTID_[O6JE9.jpg" alt="">
+<img src="img/$RH0WD]XIKV4LPMUAU~JTI7.jpg" alt="">
+<img src="img/J{U%3`5}8QO7SF_0N%J}`3N.jpg" alt="">
+<p>数组的扩展</p>
+<img src="img/P7{SSA{P9GF6O}63]03U[@7.jpg" alt="">
+<img src="img/ADU32%QS{J5FKW5]ON{7E(G.jpg" alt="">
+<img src="img/M(P9FGO~%(CU0V(0L%{R2RP.jpg" alt="">
+</body>
+<!--es6-->
+
+<!--全局作用域
+函数作用域
+块级作用域
+
+-->
+<script>
+    {
+//        console.log(a);/*弹不出  let没有变量提升的功能*/
+        let a = 5;
+        a = 11;
+        /*这样可以修改*/
+//        let a=11;/*不能重复声明*/
+        console.log(a);
+        /*能打印出来 块以外不能访问*/
+    }
+    //    console.log(a);(打印不出来);
+
+    //js是单线程 for循环先循环在执行
+    /*  for (let i = 0; i < 5; i++) {
+     setTimeout(function () {
+     console.log(i);
+     }, 0)
+     }*/
+
+    {
+        const b = 1;
+        /*声明常量,声明之后值不能改变  其余都一样*/
+        console.log(b);
+    }
+    //    解构
+    var bob = document.getElementsByClassName("bob")[0];
+    var lis = bob.children;
+    let [li1,li2,li3,li4,li5]=lis;
+
+    console.log(li2);
+
+    /*    var [foo]=[];
+     var [foo]=1;
+     var [foo]=false;
+     var [foo]=NaN;*/
+    //    var [bar,foo]=[1];
+    //    console.log(foo);
+    //    这些都属于解构不成功,foo的值都会等于undefined
+    // 这是因为原始类型的值,会自动转为对象,比如数值为new Number(1)从而斗志foo取到的为undefined
+    //    不完全解构
+
+    /*就是等号左边的东西只匹配一部分等号 右边的数组这种情况下解构依然可以成功
+     * ler[x,y]=[1,1,2];
+     * x//1
+     * y//2
+     * let[a,[b],d]=[a,[2,3],3]
+     *a//1
+     * b//2
+     * d//4
+     *
+     * */
+    //上面的结构都属于不完全解构,但仍可以成功,如果对undefined或者null就会报错
+
+    /*解构不但对于数组,还可以用于对象*/
+
+
+    var {foo,bar}={bar: "bbb", foo: "aaa"}
+    console.log(foo);
+    /*aaa*/
+    console.log(bar);
+    /*bbb*/
+
+
+    var {baz}={foo: "aaa", bar: "bbb"}
+    console.log(baz);
+    /*undefined*/
+    //    因为变量没有对应的同属性名字
+    //数值的扩展
+    /*   number.isFinite();/!*检测一个数值是否为无穷*!/
+     */
+    console.log(Number.isFinite(0.8));
+    /*true*/
+    console.log(Number.isFinite(NaN));
+    /*false*/
+    console.log(Number.isFinite(15));
+    /*true*/
+    //    console.log(Number.isFinite(infinity));
+    //    console.log(Number.isFinite(-infinity));
+    console.log(Number.isFinite("foo"));
+    /*false*/
+    console.log(Number.isFinite("15"));
+    /*false*/
+    console.log(Number.isFinite(true));
+    /*false*/
+
+
+    Number.isNaN()
+    /*用来检测值是否为nan*/
+    //    console.log(Number.NaN(NaN));
+    //    /*true*/
+    //    console.log(Number.NaN(15));
+    //    /*fasle*/
+    //    console.log(Number.NaN("15"));
+    //    /*false*/
+    //    console.log(Number.NaN(true));
+    /*false*/
+
+
+    console.log(Math.sign(2.5));
+    /*1*/
+    console.log(Math.sign(-2.5));
+    /*-1*/
+
+
+
+    //    array,form方法可以吧函数的arrguments对象转换为数组
+//    arguments不是数组 但是有数组的属性
+    function fff() {
+        var t = Array.from(arguments);
+        console.log(t);
+    }
+    fff("a", "b", "c");
+
+
+//    数组的返回值,.find用于找到第一个返回符合条件的成员   可以发现nan弥补了数组的indexof方法的不足
+    console.log([1, 2, 1, 5, 3, 5, 2, 5, 5, 11, 12, 15].find(function (value, index, arr) {
+        return value > 9;
+    }));
+//    fingindex返回符合条件的位置,如果找不到返回值为-1
+    console.log([1, 2, 1, 5, 3, 5, 2, 5, 5, 11, 12, 15].findIndex(function (value, index, arr) {
+        return value > 9;
+    }));
+
+
+
+//    数组的填充filll
+    console.log(["a", "b", "c"].fill(2));/*222*/
+//    还可以接受第二个和第三个参数 表示指定的起始位置和结束位置
+    console.log(["a", "b", "c"].fill(7,1,2));/*a,7,4*/
+</script>
+</html>

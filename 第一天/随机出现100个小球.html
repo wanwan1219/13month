@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #can{
+            background: white;
+            display: block;
+            margin: 100px auto 0;
+        }
+        body{
+            background: black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="can" width="800px" height="800px"></canvas>
+<script>
+    var canvas=document.getElementById("can");
+    var ctx=canvas.getContext("2d");
+    var ballArray=new Array();
+    function Ball(){
+        this.x= Math.random()*800;
+        this.y= Math.random()*800;
+        this.r= Math.random()*30;
+        this.color="rgb("+parseInt(Math.random()*255)+','+parseInt(Math.random()*255)+','+parseInt(Math.random()*255)+")";
+        ballArray.push(this);
+    }
+    Ball.prototype.render=function(){
+        ctx.beginPath();
+        ctx.arc(this.x,this.y,this.r,0,Math.PI*2,true);
+        ctx.fillStyle=this.color;
+        ctx.closePath();
+        ctx.fill();
+    };
+    for(var i=0;i<100;i++){
+        var bb=new Ball();
+        bb.render();
+    }
+</script>
+</body>
+</html>

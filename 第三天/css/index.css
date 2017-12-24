@@ -1,0 +1,114 @@
+body{
+    max-width: 7.2rem;
+    min-width: 3.2rem;
+    margin: 0 auto;
+    font-size: .12rem;
+    width: 100%;
+    height: auto;
+}
+.header{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 3.2rem;
+    height: .44rem;
+    background:#31c27c;
+    line-height: .44rem;
+}
+.header img{
+    margin-top: .1rem;
+    line-height: .44rem;
+    float: left;
+    width: .9rem;
+    height: .25rem;
+    margin-left: .1rem;
+}
+.header span{
+    font-size: .15rem;
+    margin-top: .1rem;
+    margin-right: .1rem;
+    text-align: center;
+    float: right;
+    display: inline-block;
+    width: .8rem;
+    height: .25rem;
+    line-height: .25rem;
+    border-radius: .1rem;
+    color: white;
+    background: #149c5a;
+}
+.nav{
+    width: 100%;
+    max-width: 100%;
+    min-width: .32rem;
+    position: absolute;
+    top: .44rem;
+    left: 0;
+}
+.nav ul li{
+    float: left;
+    text-align: center;
+    width: 33.33333333333%;
+    font: .15rem/.4rem "";
+    color: rgba(0,0,0,.6);
+    border-bottom: .03rem solid transparent;
+}
+.nav ul li.cli{
+    color: #31c27c;
+    border-bottom-color: #31c27c;;
+}
+.contents{
+    width: 100%;
+}
+.contents .content2,.contents .content3{
+    display: none;
+}
+.contents .content1{
+    display: block;
+    width: 100%;
+}
+.contents .banner{
+    width: 7.2rem;
+    height: 2.88rem;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.contents .banner ul{
+    width: 53rem;
+    height: 2.88rem;
+    position: absolute;
+    left: -7.2rem;
+    transition: left .5s linear 0s;
+}
+.contents .banner ul li{
+    width: 7.2rem;
+    height: 2.88rem;
+    float: left;
+}
+.contents .banner ul li img{
+    width: 7.2rem;
+    height: 2.88rem;
+}
+.banner ol li{
+    width: .1rem;
+    height: .1rem;
+    border-radius: 100%;
+    background: #cccbba;
+    margin-left: .2rem;
+    float: left;
+}
+.banner ol{
+    position: absolute;
+    left: 50%;
+    margin-left: -.75rem;
+    bottom: .2rem;
+}
+.banner ol li.col{
+    background: #ffffff;
+}
+.content_wrap .content2,.content_wrap .content3,.content_wrap .content4{
+    display: none;
+}
